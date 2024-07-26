@@ -1,0 +1,10 @@
+[package]
+name = "event-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.39.1", features = ["full"]}
+femme = "2.2.1"
+log = "0.4.22"
+dotenv = "0.15.0"
