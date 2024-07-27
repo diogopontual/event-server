@@ -1,6 +1,10 @@
+mod connection;
+mod Message;
+
 use tokio::net::{TcpListener, TcpStream};
 use dotenv::dotenv;
 use std::env;
+use crate::connection::Connection;
 
 #[tokio::main]
 async fn main() {
@@ -17,6 +21,11 @@ async fn main() {
     }
 }
 
-async fn process(socket: TcpStream){]
+async fn process(socket: TcpStream){
     let mut connection = Connection::new(socket);
+    loop{
+        if let Some(message) = connection.read_message().await.unwrap() {
+
+        }
+    }
 }
